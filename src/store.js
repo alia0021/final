@@ -177,11 +177,13 @@ export default new Vuex.Store({
             ".json" +
             "?auth=" +
             state.idToken,
-
-          { name: state.user.name },
-          { age: state.user.age },
-          { city: state.user.city },
-          { job: state.user.job }
+          //add a single object to update all of the user's info
+          {
+            name: state.user.name,
+            age: state.user.age,
+            city: state.user.city,
+            job: state.user.job
+          }
         )
         .then(res => {
           console.log(res);
